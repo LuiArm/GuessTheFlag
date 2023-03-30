@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F6808FE029D39151007FFBEA /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808FDF29D39151007FFBEA /* GuessTheFlagApp.swift */; };
 		F6808FE229D39151007FFBEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808FE129D39151007FFBEA /* ContentView.swift */; };
 		F6808FE429D39152007FFBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6808FE329D39152007FFBEA /* Assets.xcassets */; };
 		F6808FE729D39152007FFBEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6808FE629D39152007FFBEA /* Preview Assets.xcassets */; };
+		F6808FEE29D5492A007FFBEA /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808FED29D5492A007FFBEA /* GuessTheFlagApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6808FDC29D39151007FFBEA /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6808FDF29D39151007FFBEA /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
 		F6808FE129D39151007FFBEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F6808FE329D39152007FFBEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6808FE629D39152007FFBEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F6808FED29D5492A007FFBEA /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 		F6808FDE29D39151007FFBEA /* GuessTheFlag */ = {
 			isa = PBXGroup;
 			children = (
-				F6808FDF29D39151007FFBEA /* GuessTheFlagApp.swift */,
+				F6808FED29D5492A007FFBEA /* GuessTheFlagApp.swift */,
 				F6808FE129D39151007FFBEA /* ContentView.swift */,
 				F6808FE329D39152007FFBEA /* Assets.xcassets */,
 				F6808FE529D39152007FFBEA /* Preview Content */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6808FE229D39151007FFBEA /* ContentView.swift in Sources */,
-				F6808FE029D39151007FFBEA /* GuessTheFlagApp.swift in Sources */,
+				F6808FEE29D5492A007FFBEA /* GuessTheFlagApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
