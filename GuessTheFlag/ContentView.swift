@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingScore = false
+    @State private var showAlert = false
+    @State private var isFinished = false
+    @State private var numberOfRounds = 1
     @State private var scoreTitle = ""
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     
     @State private var correctAnwer = Int.random(in: 0...2)
-    @State private var score: Int = 0
+    @State private var score = 0
     
     var body: some View {
         ZStack {
@@ -29,6 +31,7 @@ struct ContentView: View {
                 Text("Guess the Flag")
                        .font(.largeTitle.weight(.bold))
                        .foregroundColor(.white)
+                
                 VStack(spacing: 15){
                     VStack {
                        Text("Tap the flag of")
@@ -61,39 +64,52 @@ struct ContentView: View {
                 Text("Score: \(score)")
                     .foregroundColor(.white)
                     .font(.title.bold())
+                Text("Round: \(numberOfRounds)")
+                    .foregroundColor(.white)
+                    .font(.title2)
                 
                 Spacer()
             }
             .padding()
         }
-        .alert(scoreTitle, isPresented: $showingScore){
+        .alert(scoreTitle, isPresented: $showAlert){
             Button("Continue", action: askQuestion)
+        } message: {
+            Text("Your score is \(score)")
+        }
+        
+        .alert("Finished", isPresented: $isFinished) {
+            Button("Restart", action: restart)
         } message: {
             Text("Your score is \(score)")
         }
     }
     
     func flagTapped(_ number: Int){
-        if number == correctAnwer {
-            scoreTitle = "Correct"
+        if numberOfRounds >= 8 {
+           restart()
         }else {
-            scoreTitle = "Wrong"
+            if number == correctAnwer {
+                scoreTitle = "Correct"
+                score += 1
+            }else {
+                scoreTitle = "Wrong"
+            }
         }
-        showingScore = true
+        numberOfRounds += 1
+        showAlert = true
+       
     }
     
-//    func checkScore(_ number: Int) -> Int{
-//        if number == correctAnwer{
-//            $score+=1
-//        }else{
-//            $score-=1
-//        }
-//        return score
-//    }
-//
     func askQuestion() {
         countries.shuffle()
         correctAnwer = Int.random(in: 0...2)
+    }
+    
+    func restart() {
+        isFinished = true
+        score = 0
+        numberOfRounds = 1
     }
 }
 
