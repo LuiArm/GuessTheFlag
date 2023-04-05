@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle.weight(.bold))
+            .foregroundColor(.white)
+    }
+}
+
+extension View {
+    func titleStyle() -> some View {
+        modifier(Title())
+    }
+}
+
 struct ContentView: View {
     @State private var showAlert = false
     @State private var isFinished = false
@@ -28,6 +42,8 @@ struct ContentView: View {
         }
     }
     
+   
+    
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -40,8 +56,7 @@ struct ContentView: View {
                 Spacer()
                 
                 Text("Guess the Flag")
-                       .font(.largeTitle.weight(.bold))
-                       .foregroundColor(.white)
+                       .titleStyle()
                 
                 VStack(spacing: 15){
                     VStack {
